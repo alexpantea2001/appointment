@@ -41,6 +41,7 @@ class AppointmentsController extends Controller
     public function reserve(Request $request) {
         $data = $request->merge(['user_id' => auth()->id()])->toArray();
         Appointment::create($data);
-        return back();
+        // return back();
+        return response()->json(['success'=>'Successfully']);
     }
 }
